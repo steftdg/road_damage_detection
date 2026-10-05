@@ -1,0 +1,16 @@
+# Poids des modèles — trop lourds pour Git, à transmettre à part
+models/*.pt
+
+# Fichiers utilisateurs (uploads et résultats générés)
+static/uploads/*
+static/resultats/*
+!static/uploads/.gitkeep
+!static/resultats/.gitkeep
+
+# Environnements / dépendances
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+.env
