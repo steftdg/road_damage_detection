@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T10:12:19.434Z",
+  "title": "Design System: STRATA",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Vert principal"
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Citron de navigation"
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Fond clair"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Surface blanche"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Encre"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texte secondaire"
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Titre de page",
+        "purpose": "30px ordinateur, 27px tablette intermédiaire, 26px mobile."
+      },
+      "title": {
+        "displayName": "Nom de page",
+        "purpose": "Header : 23px ordinateur, 20px mobile."
+      },
+      "body": {
+        "displayName": "Texte courant",
+        "purpose": "Descriptions : 14–15px selon le composant."
+      },
+      "brand": {
+        "displayName": "Identité",
+        "purpose": "Mot-symbole STRATA ; Space Grotesk est aussi employé pour les numéros du guide."
+      }
+    },
+    "shadows": [
+      {
+        "name": "segment-selected",
+        "value": "0 1px 3px #14271b14",
+        "purpose": "Segment actif."
+      },
+      {
+        "name": "model-list",
+        "value": "0 14px 40px #152b2424",
+        "purpose": "Liste de modèles ouverte."
+      },
+      {
+        "name": "model-trigger-open",
+        "value": "0 0 0 2px #245c4614",
+        "purpose": "Déclencheur ouvert."
+      },
+      {
+        "name": "detection-highlight",
+        "value": "0 0 0 4px white",
+        "purpose": "Zone sélectionnée."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "0.15s",
+        "purpose": "Fond et couleur des boutons, fond et bordure du dépôt."
+      },
+      {
+        "name": "spinner",
+        "value": "1s linear infinite",
+        "purpose": "Rotation de progression."
+      },
+      {
+        "name": "scan",
+        "value": "3s linear infinite",
+        "purpose": "Balayage pendant analyse."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "desktop-compact",
+        "value": "1200px"
+      },
+      {
+        "name": "tablet",
+        "value": "980px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "narrow",
+        "value": "360px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bouton principal extrait des styles construits.",
+      "html": "<button class=\"ds-button ds-button-primary\">Lancer l’analyse</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 46px;\n  padding: 12px 18px;\n  border-radius: 9px;\n  border: 1px solid transparent;\n  font-size: 14px;\n  font-weight: 700;\n  white-space: nowrap;\n  transition:\n    background 0.15s,\n    color 0.15s;\n}\n.ds-button-primary {\n  background: var(--green);\n  color: #fff;\n}\n.ds-button-primary:hover:not(:disabled) {\n  background: #174732;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    },
+    {
+      "name": "Bouton secondaire",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Bouton secondaire extrait des styles construits.",
+      "html": "<button class=\"ds-button ds-button-secondary\">Parcourir les fichiers</button>",
+      "css": ".ds-button {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 10px;\n  min-height: 46px;\n  padding: 12px 18px;\n  border-radius: 9px;\n  border: 1px solid transparent;\n  font-size: 14px;\n  font-weight: 700;\n  white-space: nowrap;\n  transition:\n    background 0.15s,\n    color 0.15s;\n}\n.ds-button-secondary {\n  background: white;\n  border-color: #cdd8d0;\n}\n.ds-button-secondary:hover:not(:disabled) {\n  background: #f0f5ee;\n  border-color: #96ad9c;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    },
+    {
+      "name": "Recherche",
+      "kind": "input",
+      "description": "Recherche extrait des styles construits.",
+      "html": "<label class=\"ds-search-input\"><input aria-label=\"Rechercher\" placeholder=\"Rechercher un fichier\" /></label>",
+      "css": ".ds-search-input {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  background: #fff;\n  border: 1px solid var(--line);\n  border-radius: 9px;\n  padding: 0 14px;\n  min-height: 46px;\n  flex: 1;\n  max-width: 460px;\n  min-width: 0;\n  color: var(--muted);\n}\n.ds-search-input input {\n  border: 0;\n  outline: none;\n  background: none;\n  width: 100%;\n  min-width: 0;\n  font-size: 14px;\n  color: var(--ink);\n  padding: 13px 0;\n}\n.ds-search-input:focus-within {\n  outline: 2px solid var(--green);\n  outline-offset: 2px;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Navigation extrait des styles construits.",
+      "html": "<nav class=\"ds-main-nav\"><a href=\"#\" class=\"ds-active\">Analyse</a><a href=\"#\">Historique</a></nav>",
+      "css": ".ds-main-nav a {\n  display: flex;\n  align-items: center;\n  gap: 14px;\n  padding: 14px 16px;\n  min-height: 50px;\n  border-radius: 10px;\n  color: #c3d0c8;\n  font-size: 15px;\n  font-weight: 500;\n}\n.ds-main-nav a:hover {\n  background: #263b31;\n  color: #fff;\n}\n.ds-main-nav a.ds-active {\n  background: var(--accent);\n  color: #203a27;\n  font-weight: 700;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    },
+    {
+      "name": "État terminé",
+      "kind": "chip",
+      "description": "État terminé extrait des styles construits.",
+      "html": "<span class=\"ds-status-chip ds-completed\"><i></i>Terminé</span>",
+      "css": ".ds-status-chip {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 12px;\n  color: #756337;\n  background: #faf3e3;\n  padding: 6px 9px;\n  border-radius: 5px;\n}\n.ds-status-chip.ds-completed {\n  color: var(--green);\n  background: #edf4e7;\n}\n.ds-status-chip i {\n  width: 5px;\n  height: 5px;\n  border-radius: 50%;\n  background: currentColor;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    },
+    {
+      "name": "Panneau",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Panneau extrait des styles construits.",
+      "html": "<section class=\"ds-upload-panel\"><div class=\"ds-panel-heading\"><h3>Paramètres de l’analyse</h3></div></section>",
+      "css": ".ds-upload-panel {\n  background: var(--paper);\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  min-width: 0;\n}\n.ds-viewer,\n.ds-upload-panel,\n.ds-results-panel {\n  background: var(--paper);\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  min-width: 0;\n}\n.ds-upload-panel {\n  padding: 26px;\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n  position: relative;\n  min-height: 620px;\n}\n.ds-panel-heading h3 {\n  font-size: 18px;\n  letter-spacing: -0.35px;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    },
+    {
+      "name": "Modèle",
+      "kind": "custom",
+      "refersTo": "model-trigger",
+      "description": "Modèle extrait des styles construits.",
+      "html": "<button class=\"ds-model-select-trigger\" role=\"combobox\" aria-expanded=\"false\"><span><strong>Standard</strong><small>Recommandé</small></span><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m6 9 6 6 6-6\"/></svg></button>",
+      "css": ".ds-model-select-trigger {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  text-align: left;\n  border: 1px solid #bfcec3;\n  border-radius: 9px;\n  background: #fff;\n  padding: 13px 15px;\n  gap: 14px;\n  min-height: 72px;\n}\n.ds-model-select-trigger:hover:not(:disabled) {\n  border-color: var(--green);\n}\n.ds-model-select-trigger[aria-expanded=\"true\"] {\n  border-color: var(--green);\n  box-shadow: 0 0 0 2px #245c4614;\n}\n.ds-model-select-trigger strong {\n  font-size: 15px;\n  font-weight: 700;\n  display: block;\n}\n.ds-model-select-trigger small {\n  display: block;\n  font-size: 12px;\n  color: var(--muted);\n  margin-top: 3px;\n}button:focus-visible,a:focus-visible,input:focus-visible,[role=\"combobox\"]:focus-visible {outline:3px solid #497945;outline-offset:4px;} button:disabled{cursor:not-allowed;opacity:.48;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Inspection routière",
+    "overview": "Une interface de travail calme et lisible. La navigation végétale sombre structure les pages ; les surfaces blanches accueillent le média, les paramètres et les données. Les libellés nomment les tâches et les états du service.\n\nL’identité existante conserve STRATA et sa palette. Manrope porte les titres et les commandes ; Space Grotesk reste limité au mot-symbole et aux numéros du guide. Le header nomme la page et l’utilisateur local est Anonyme.",
+    "keyCharacteristics": [
+      "Titres directs et texte courant lisible.",
+      "Aperçu et formulaire équilibrés, résultats sur une ligne complète.",
+      "Surfaces blanches bordées et accent citron de navigation.",
+      "États de disponibilité explicites et navigation mobile fixe."
+    ],
+    "rules": [
+      {
+        "name": "Class Color",
+        "body": "Accompagner la couleur de dommage d’un nom ou d’un code de classe.",
+        "section": "colors"
+      },
+      {
+        "name": "Functional Type",
+        "body": "Conserver la hiérarchie lisible des titres, descriptions et commandes ; réserver les petites tailles aux repères secondaires déjà présents.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do conserver les titres directs, les descriptions lisibles et les commandes à la taille établie.",
+      "Do garder l’aperçu et le formulaire équilibrés, avec les résultats sur toute la largeur.",
+      "Do préserver la navigation mobile fixe et son espace de sécurité.",
+      "Do associer états et couleurs à des libellés, avec focus visible et réduction du mouvement.",
+      "Do conserver Manrope pour le travail et Space Grotesk pour les deux usages d’identité constatés."
+    ],
+    "donts": [
+      "Don't réintroduire slogans, établissement, licence ou auteur dans les écrans.",
+      "Don't revenir aux titres poétiques ou au texte courant à (12px).",
+      "Don't présenter une image d’exemple comme une analyse ni une indisponibilité comme un résultat.",
+      "Don't confondre confiance, gravité et nombre de dommages uniques dans une vidéo."
+    ]
+  }
+}

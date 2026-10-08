@@ -14,3 +14,11 @@ __pycache__/
 venv/
 node_modules/
 .env
+
+# Données locales conservées, sauvegardes et artefacts de vérification
+runtime/
+frontend/dist/
+frontend/playwright-report/
+frontend/test-results/
+.impeccable/review/
+.venv*/

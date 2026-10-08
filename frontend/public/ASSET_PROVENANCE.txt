@@ -1,0 +1,13 @@
+Asset: terrain-cotonou.jpg
+Source: data_test/WhatsApp Video 2026-09-10 at 19.58.00.mp4
+Source absolute path at extraction: D:\Documents\GitHub\steftdg\road_damage_detection\data_test\WhatsApp Video 2026-09-10 at 19.58.00.mp4
+Extraction date: 2026-10-08 (Europe/Paris)
+Requested position: 00:05.000
+Decoded frame index (zero-based): 147
+Decoded timestamp: 5.020167 seconds
+Source resolution: 360 x 640
+Export resolution: 1280 x 2276
+Method: OpenCV VideoCapture, full frame preserved, resize INTER_CUBIC, JPEG quality 90.
+Purpose: real field photograph shown as an illustrative sample, without model results or generated bounding boxes.
+Origin: video supplied in the repository, attributed to the road damage detection project documented in README.md.
+No image generation or synthetic content.

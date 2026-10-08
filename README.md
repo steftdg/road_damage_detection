@@ -81,21 +81,51 @@ il n'est pas destiné à être exécuté tel quel en dehors de Kaggle.
 
 ## Interface web
 
-Une interface web est en cours de construction pour permettre à l'utilisateur
-d'uploader une image ou une vidéo, de choisir l'un des quatre modèles, et de récupérer
-le résultat annoté (boîtes dessinées) ainsi que le détail des détections (classe,
-confiance, et pour une vidéo : frame et FPS d'inférence obtenu). La stack technique
-n'est pas encore figée.
+**STRATA** est l’atelier web du projet : frontend React/TypeScript et API FastAPI.
+L’interface en français permet de charger une image ou une vidéo, choisir un modèle
+et le seuil de confiance, suivre le traitement, examiner les zones détectées,
+télécharger le média annoté et exporter les détections en CSV/JSON. L’historique
+SQLite et les fichiers sont conservés localement après redémarrage.
+
+La vue image relie les zones à leur détail (classe et confiance), avec zoom et
+affichage original/détections. Les vidéos disposent de leur progression, du détail
+des images analysées et de leurs temps de détection. Les résultats vidéo comptent
+des détections par image, pas des dommages uniques. Aucun score de gravité n’est
+inventé à partir de la confiance.
+
+L’interface et l’API démarrent sans les poids, et indiquent explicitement les modèles
+indisponibles. **L’inférence nécessite les fichiers `.pt` entraînés**, qui ne sont
+pas inclus dans ce dépôt, ainsi que les dépendances Ultralytics. Aucun modèle
+générique ni résultat simulé ne les remplace.
+
+```text
+frontend/                 React, TypeScript, Vite, composants et tests navigateur
+backend/app/              API, validation médias, service YOLO et stockage SQLite
+backend/tests/            Tests API et pipeline avec détecteur de contrôle
+scripts/setup.ps1         Préparation des environnements sans remplacement
+scripts/start.ps1         Lancement local de l’API et du frontend
+docs/GETTING_STARTED.md   Installation, connexion des poids et vérifications
+runtime/                  Analyses, sauvegardes et journaux locaux (hors Git)
+```
 
 ## Installation
 
-```bash
-git clone <url-du-dépôt>
-cd <nom-du-dépôt>
-pip install -r requirements.txt
+Prérequis : Python 3.12 et Node.js 22.12 ou supérieur.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\setup.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\start.ps1 -OpenBrowser
 ```
 
-Déposer les 4 fichiers `.pt` dans `models/` avant de lancer l'inférence.
+Ouvrir **http://127.0.0.1:5173**. La documentation interactive de l’API est sur
+**http://127.0.0.1:8000/docs**. Pour activer l’inférence, préparer un nouvel
+environnement avec `setup.ps1 -WithInference -EnvironmentPath .venv-inference`,
+puis déposer au moins `yolov8n_final.pt` dans `models/`. Un seul modèle suffit ; les
+autres restent signalés comme absents. Voir le [guide complet](docs/GETTING_STARTED.md).
+
+Les fichiers existants sont préservés, les nouveaux médias reçoivent des chemins
+uniques et aucune purge automatique n’est exécutée. L’application est prévue pour
+un usage local et une démonstration sans authentification.
 
 
 ## Perspectives
