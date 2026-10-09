@@ -1,5 +1,4 @@
-# Poids des modèles — trop lourds pour Git, à transmettre à part
-models/*.pt
+
 
 # Fichiers utilisateurs (uploads et résultats générés)
 static/uploads/*
